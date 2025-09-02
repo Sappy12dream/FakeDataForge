@@ -1,126 +1,115 @@
-Fake Data Generator & File Converter
+# 🚀 FakeDataForge  
 
-A Python CLI toolkit for generating fake datasets with PK/FK relationships and converting files between CSV, Parquet, and Excel formats. Ideal for testing, prototyping, or data pipeline development.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)]()  
+[![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange.svg)]()  
+[![Status](https://img.shields.io/badge/Project-Active-success.svg)]()  
 
-Features
-1. Fake Data Generator
+**FakeDataForge** is a modular CLI toolkit for **data generation, file conversion, and visualization**.  
+It helps developers, testers, and data engineers quickly create realistic datasets, convert between formats, and inspect data right from the terminal.  
 
-Generate tables with primary keys (PK) and foreign keys (FK).
+---
 
-Support for multiple column types:
+## ✨ Features  
 
-pk, fk, name, email, address, number, float, boolean, choice, date.
+✅ **Fake Data Generator**  
+- Generate synthetic datasets with primary/foreign key relationships.  
+- Customize number of rows, column types, and relationships.  
+- Output directly to CSV for easy integration.  
 
-Configure nullable columns.
+✅ **File Converter**  
+- Convert files between **CSV, Parquet, and Excel (XLS/XLSX)** formats.  
+- Simple one-line commands, powered by **Pandas** + **PyArrow**.  
 
-Custom number of rows per table.
+✅ **Data Visualization**  
+- Preview datasets in a clean **tabular terminal view**.  
+- (coming soon)Support for filtering, sorting, and pagination.  
 
-Export datasets to CSV files.
+---
 
-Prebuilt example schema: Users, Products, Orders.
+## 🛠️ Tech Stack  
 
-2. File Converter
+- **Python 3.8+**  
+- [Faker](https://faker.readthedocs.io/) → Synthetic data generation  
+- [Pandas](https://pandas.pydata.org/) → File handling & conversion  
+- [PyArrow](https://arrow.apache.org/) → Parquet support  
+- [Typer](https://typer.tiangolo.com/) → Modern CLI framework  
 
-Convert files between supported formats:
+---
 
-CSV ↔ Parquet ↔ Excel (.xlsx, .xls)
+## 📦 Installation  
 
-Automatic format detection based on file extension.
+Clone the repo and install in editable mode:  
 
-Simple CLI interface for quick conversions.
-
-Installation
-# Clone the repository
+```bash
 git clone https://github.com/yourusername/FakeDataForge.git
 cd FakeDataForge
-
-# Install in editable mode
 pip install -e .
+```
 
-CLI Usage
-Fake Data Generator
-# Launch the interactive CLI
-fakegen
+## 🚀 Usage  
 
-
-Options:
-
-Prebuilt schema (Users, Products, Orders)
-
-Custom schema
-
-Exit
-
-Follow the prompts to configure tables, columns, types, and row counts.
-
-File Converter
-# Convert a file (auto output name if -o not provided)
-convertfile input.csv
-convertfile input.xlsx -o output.parquet
+### 1️⃣ Generate Fake Data  
+```bash
+fakegen 
+```
+👉 Generates a dataset with 1,000 rows based on your schema.
 
 
-Supported input/output formats: csv, parquet, xlsx, xls.
+2️⃣ Convert Files
+```
+convertfile data.csv --output data.parquet
+```
 
-Examples
+👉 Converts CSV to Parquet. Supported formats: csv, parquet, xls, xlsx.
 
-Generate prebuilt data:
+3️⃣ Visualize Data
+```
+visualize data.csv
+```
 
-fakegen
-# Choose "1" for prebuilt schema
+👉 Opens a pretty terminal table view of the file.
 
 
-Custom table example:
 
-Table: Customers
+## 🌟 Why FakeDataForge?
 
-Columns:
+⚡ **All-in-one tool** for test data workflows.  
 
-customer_id (pk)
+🛠️ **Modular & Extensible** – easy to add new features.  
 
-name (name)
+📊 **Practical for Devs & Data Engineers** – no more manual file conversions.  
 
-email (email)
+🎯 **Resume-worthy Project** – demonstrates software engineering, CLI design, modular architecture, and data engineering concepts.  
 
-signup_date (date)
+---
 
-Convert CSV to Parquet:
+## 📌 Roadmap
+- [x] Fake data generation (CSV)  
+- [x] File conversion (CSV ↔ Parquet ↔ Excel)  
+- [x] File visualization in terminal (pretty tables)  
+- [ ] REST API interface (optional future)  
+- [ ] Dockerized version  
 
-convertfile ./fake_data/Customers.csv -o ./fake_data/Customers.parquet
+---
 
-Dependencies
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!  
+Feel free to fork, open PRs, or suggest ideas.  
 
-Python >= 3.8
+---
 
-Faker
+## 👩‍💻 Author
+**Sapna Singh Khatik**  
+📧 [sapnasinghkhatik@gmail.com](mailto:sapnasinghkhatik@gmail.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/sapna-singh-khatik/)
 
-Typer
+---
 
-pandas
+## 📜 License
+Licensed under the **MIT License** – feel free to use, modify, and share.  
 
-pyarrow
- (for Parquet support)
+---
 
-python-dotenv (optional for future env configs)
-
-Project Structure
-FakeDataForge/
-├─ fake_data_generator/
-│  ├─ __init__.py
-│  ├─ cli.py
-│  ├─ schema.py
-│  ├─ generator.py
-│  ├─ prompts.py
-│  ├─ prebuilt.py
-│  └─ custom.py
-├─ file_converter/
-│  ├─ __init__.py
-│  ├─ cli.py
-│  ├─ reader.py
-│  └─ writer.py
-├─ pyproject.toml
-├─ README.md
-└─ setup.cfg (optional)
-
-License
-
-MIT License © Sapna Singh Khatik
+⚡ *FakeDataForge – Making data workflows faster, easier, and smarter.* ⚡
