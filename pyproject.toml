@@ -1,0 +1,31 @@
+[project]
+name = "fake-data-generator"
+version = "0.1.0"
+description = "CLI tool to generate fake CSV datasets with PK/FK relationships, convert files, and visualize data."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+  { name = "Sapna Singh Khatik", email = "sapnasinghkhatik@gmail.com" }
+]
+license = "MIT"
+
+dependencies = [
+  "Faker>=37.5.3",
+  "typer>=0.9.0",
+  "python-dotenv>=1.0.0",
+  "pandas>=2.0",
+  "pyarrow>=21.0.0",
+  "rich>=14.1.0"
+]
+
+[project.scripts]
+fakegen = "fake_data_generator.cli:app"
+convertfile = "file_converter.cli:app"
+visualize = "visualize_file.cli:app"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["fake_data_generator", "file_converter", "visualize_file"]
