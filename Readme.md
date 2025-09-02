@@ -81,7 +81,6 @@ visualize data.csv
 
 📊 **Practical for Devs & Data Engineers** – no more manual file conversions.  
 
-🎯 **Resume-worthy Project** – demonstrates software engineering, CLI design, modular architecture, and data engineering concepts.  
 
 ---
 
